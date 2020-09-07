@@ -8,6 +8,7 @@ import states from '../../consts/states.json'
 
 const getStateNameByUfCode = ufCode => {
   const state = states.find(s => s.ufCode === ufCode)
+
   return state?.name || ''
 }
 
@@ -36,11 +37,12 @@ const loadOptions = (inputValue, callback) => {
   callback(filterCities(inputValue))
 }
 
-function CitySelect({ fetchWeather }) {
+const CitySelect = ({ fetchWeather }) => {
   return (
     <AsyncSelect
       className="CitySelect"
-      cacheOptions
+      value=""
+      placeholder=""
       loadOptions={loadOptions}
       onChange={fetchWeather}
       styles={selectStyles}
@@ -49,8 +51,6 @@ function CitySelect({ fetchWeather }) {
         DropdownIndicator,
         IndicatorSeparator: () => null,
       }}
-      value=""
-      placeholder=""
       noOptionsMessage={({ inputValue }) => {
         return !inputValue ? 'Digite a cidade' : 'Nenhuma cidade encontrada'
       }}
