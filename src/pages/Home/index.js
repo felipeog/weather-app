@@ -36,12 +36,21 @@ const Home = () => {
     fetch(getQuery(coords))
       .then(res => res.json())
       .then(data => {
-        setHomeState(prevState => ({
-          ...prevState,
-          cityName: label,
-          data: data.daily,
-          loading: false,
-        }))
+        if (data.message) {
+          setHomeState(prevState => ({
+            ...prevState,
+            loading: false,
+            error: true,
+          }))
+          console.error(data.message)
+        } else {
+          setHomeState(prevState => ({
+            ...prevState,
+            cityName: label,
+            data: data.daily,
+            loading: false,
+          }))
+        }
       })
       .catch(e => {
         setHomeState(prevState => ({
