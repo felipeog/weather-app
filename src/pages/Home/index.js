@@ -18,7 +18,7 @@ const getQuery = ({ lon, lat }) => {
     exclude: 'current,minutely,hourly',
     units: 'metric',
     lang: 'pt_br',
-    appid: '9c748f1affe9afcc2abf05052a3a615f',
+    appid: process.env.REACT_APP_APPID,
   })
 
   return `https://api.openweathermap.org/data/2.5/onecall?${params}`
