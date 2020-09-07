@@ -22,11 +22,33 @@ const citiesOptions = cities.map(({ name, ibgeCode, ufCode, lon, lat }) => ({
   },
 }))
 
+const toSlug = string => {
+  const trimmedString = string.replace(/^\s+|\s+$/g, '')
+  const lowerCaseString = trimmedString.toLowerCase()
+  const from = 'ãàáäâèéëêìíïîõòóöôùúüûñç·/_,:;'
+  const to = 'aaaaaeeeeiiiiooooouuuunc------'
+
+  let removedAccentsString = lowerCaseString
+  for (let i = 0, l = from.length; i < l; i++) {
+    const regex = new RegExp(from.charAt(i), 'g')
+    const character = to.charAt(i)
+
+    removedAccentsString = removedAccentsString.replace(regex, character)
+  }
+
+  const slug = removedAccentsString
+    .replace(/[^a-z0-9 -]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-')
+
+  return slug
+}
+
 const filterCities = inputValue => {
   return citiesOptions
     .filter(c => {
-      const label = c.label.toLowerCase()
-      const value = inputValue.toLowerCase()
+      const label = toSlug(c.label)
+      const value = toSlug(inputValue)
 
       return label.includes(value)
     })
