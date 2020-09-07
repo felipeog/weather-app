@@ -1,0 +1,71 @@
+.WeatherApp {
+  display: flex;
+  justify-content: center;
+
+  .app-container {
+    margin: 2rem;
+    width: 320px;
+
+    .content {
+      padding-top: 2rem;
+
+      .city {
+        font-weight: 700;
+        margin-bottom: 1rem;
+      }
+
+      .temperature {
+        font-size: 10rem;
+        font-weight: 700;
+        margin: 1.4rem 0;
+      }
+
+      .min-max,
+      .wind-humidity {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .min-max {
+        font-weight: 700;
+        margin-bottom: 2rem;
+
+        p:first-child::first-letter {
+          text-transform: uppercase;
+        }
+      }
+
+      .wind-humidity {
+        font-weight: 500;
+        font-size: 0.8rem;
+      }
+
+      .forecast {
+        margin-top: 4rem;
+        min-width: 100%;
+
+        thead {
+          text-align: left;
+          border-bottom: 0.1rem solid #d6d6d6;
+
+          th {
+            padding-bottom: 1rem;
+            font-size: 0.8rem;
+          }
+        }
+
+        tbody {
+          td {
+            padding-top: 1.4rem;
+          }
+        }
+      }
+
+      .error,
+      .loading,
+      .empty {
+        text-align: center;
+      }
+    }
+  }
+}

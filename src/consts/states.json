@@ -1,0 +1,191 @@
+[
+  {
+    "ufCode": 11,
+    "uf": "RO",
+    "name": "Rondônia",
+    "lat": -10.83,
+    "lon": -63.34
+  },
+  {
+    "ufCode": 12,
+    "uf": "AC",
+    "name": "Acre",
+    "lat": -8.77,
+    "lon": -70.55
+  },
+  {
+    "ufCode": 13,
+    "uf": "AM",
+    "name": "Amazonas",
+    "lat": -3.47,
+    "lon": -65.1
+  },
+  {
+    "ufCode": 14,
+    "uf": "RR",
+    "name": "Roraima",
+    "lat": 1.99,
+    "lon": -61.33
+  },
+  {
+    "ufCode": 15,
+    "uf": "PA",
+    "name": "Pará",
+    "lat": -3.79,
+    "lon": -52.48
+  },
+  {
+    "ufCode": 16,
+    "uf": "AP",
+    "name": "Amapá",
+    "lat": 1.41,
+    "lon": -51.77
+  },
+  {
+    "ufCode": 17,
+    "uf": "TO",
+    "name": "Tocantins",
+    "lat": -9.46,
+    "lon": -48.26
+  },
+  {
+    "ufCode": 21,
+    "uf": "MA",
+    "name": "Maranhão",
+    "lat": -5.42,
+    "lon": -45.44
+  },
+  {
+    "ufCode": 22,
+    "uf": "PI",
+    "name": "Piauí",
+    "lat": -6.6,
+    "lon": -42.28
+  },
+  {
+    "ufCode": 23,
+    "uf": "CE",
+    "name": "Ceará",
+    "lat": -5.2,
+    "lon": -39.53
+  },
+  {
+    "ufCode": 24,
+    "uf": "RN",
+    "name": "Rio Grande do Norte",
+    "lat": -5.81,
+    "lon": -36.59
+  },
+  {
+    "ufCode": 25,
+    "uf": "PB",
+    "name": "Paraíba",
+    "lat": -7.28,
+    "lon": -36.72
+  },
+  {
+    "ufCode": 26,
+    "uf": "PE",
+    "name": "Pernambuco",
+    "lat": -8.38,
+    "lon": -37.86
+  },
+  {
+    "ufCode": 27,
+    "uf": "AL",
+    "name": "Alagoas",
+    "lat": -9.62,
+    "lon": -36.82
+  },
+  {
+    "ufCode": 28,
+    "uf": "SE",
+    "name": "Sergipe",
+    "lat": -10.57,
+    "lon": -37.45
+  },
+  {
+    "ufCode": 29,
+    "uf": "BA",
+    "name": "Bahia",
+    "lat": -13.29,
+    "lon": -41.71
+  },
+  {
+    "ufCode": 31,
+    "uf": "MG",
+    "name": "Minas Gerais",
+    "lat": -18.1,
+    "lon": -44.38
+  },
+  {
+    "ufCode": 32,
+    "uf": "ES",
+    "name": "Espírito Santo",
+    "lat": -19.19,
+    "lon": -40.34
+  },
+  {
+    "ufCode": 33,
+    "uf": "RJ",
+    "name": "Rio de Janeiro",
+    "lat": -22.25,
+    "lon": -42.66
+  },
+  {
+    "ufCode": 35,
+    "uf": "SP",
+    "name": "São Paulo",
+    "lat": -22.19,
+    "lon": -48.79
+  },
+  {
+    "ufCode": 41,
+    "uf": "PR",
+    "name": "Paraná",
+    "lat": -24.89,
+    "lon": -51.55
+  },
+  {
+    "ufCode": 42,
+    "uf": "SC",
+    "name": "Santa Catarina",
+    "lat": -27.45,
+    "lon": -50.95
+  },
+  {
+    "ufCode": 43,
+    "uf": "RS",
+    "name": "Rio Grande do Sul",
+    "lat": -30.17,
+    "lon": -53.5
+  },
+  {
+    "ufCode": 50,
+    "uf": "MS",
+    "name": "Mato Grosso do Sul",
+    "lat": -20.51,
+    "lon": -54.54
+  },
+  {
+    "ufCode": 51,
+    "uf": "MT",
+    "name": "Mato Grosso",
+    "lat": -12.64,
+    "lon": -55.42
+  },
+  {
+    "ufCode": 52,
+    "uf": "GO",
+    "name": "Goiás",
+    "lat": -15.98,
+    "lon": -49.86
+  },
+  {
+    "ufCode": 53,
+    "uf": "DF",
+    "name": "Distrito Federal",
+    "lat": -15.83,
+    "lon": -47.86
+  }
+]
