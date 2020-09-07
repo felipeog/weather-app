@@ -1,6 +1,16 @@
+*,
+*::before,
+*::after {
+  cursor: default;
+}
+
 html {
   font-family: Montserrat, sans-serif;
   background: #060606;
   color: #d6d6d6;
   font-size: 18px;
+}
+
+*::selection {
+  background: rgba(255, 255, 255, 0.2);
 }

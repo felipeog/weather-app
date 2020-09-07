@@ -10,6 +10,8 @@ const CurrentDayWeather = ({ currentDay, cityName }) => {
   const month = months[date.getMonth()]
   const temperature = Math.round(currentDay.temp.day)
   const description = currentDay.weather[0].description
+  const capitalizedDescription =
+    description[0].toUpperCase() + description.substring(1)
   const min = Math.round(currentDay.temp.min)
   const max = Math.round(currentDay.temp.max)
   const wind = currentDay.wind_speed
@@ -26,7 +28,7 @@ const CurrentDayWeather = ({ currentDay, cityName }) => {
       <p className="temperature">{temperature}°</p>
 
       <div className="min-max">
-        <p>{description}.</p>
+        <p>{capitalizedDescription}.</p>
         <p>
           {min}°—{max}°
         </p>

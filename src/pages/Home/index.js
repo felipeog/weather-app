@@ -23,7 +23,7 @@ function Home() {
       return <p className="message">Comece pesquisando pela cidade</p>
 
     const currentDay = data[0]
-    const weekForecast = data.slice(1, data.length - 1)
+    const weekForecast = data.slice(1)
 
     return (
       <>
