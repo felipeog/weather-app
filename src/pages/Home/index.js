@@ -36,7 +36,6 @@ const Home = () => {
     fetch(getQuery(coords))
       .then(res => res.json())
       .then(data => {
-        console.log(data.daily)
         setHomeState(prevState => ({
           ...prevState,
           cityName: label,
