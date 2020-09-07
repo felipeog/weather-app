@@ -1,0 +1,20 @@
+.WeekForecast {
+  margin-top: 4rem;
+  min-width: 100%;
+
+  thead {
+    text-align: left;
+    border-bottom: 0.1rem solid #d6d6d6;
+
+    th {
+      padding-bottom: 1rem;
+      font-size: 0.8rem;
+    }
+  }
+
+  tbody {
+    td {
+      padding-top: 1.4rem;
+    }
+  }
+}

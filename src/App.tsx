@@ -1,10 +1,10 @@
 import React from 'react'
-import CitySelect from './components/CitySelect'
+import Home from './pages/Home'
 
 function App() {
   return (
     <div className="App">
-      <CitySelect />
+      <Home />
     </div>
   )
 }
