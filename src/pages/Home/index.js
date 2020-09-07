@@ -20,7 +20,7 @@ function Home() {
     if (error) return <p className="message">Ocorreu um erro</p>
     if (loading) return <p className="message">Carregando...</p>
     if (!data?.length)
-      return <p className="message">Comece pesquisando pela cidade</p>
+      return <p className="message">Comece pesquisando a cidade</p>
 
     const currentDay = data[0]
     const weekForecast = data.slice(1)

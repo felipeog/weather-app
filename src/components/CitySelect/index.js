@@ -52,7 +52,7 @@ function CitySelect({ fetchWeather }) {
       value=""
       placeholder=""
       noOptionsMessage={({ inputValue }) => {
-        return !inputValue ? 'Digite a cidade' : 'Nenhum cidade encontrada'
+        return !inputValue ? 'Digite a cidade' : 'Nenhuma cidade encontrada'
       }}
     />
   )
