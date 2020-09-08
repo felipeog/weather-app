@@ -59,14 +59,18 @@ const loadOptions = (inputValue, callback) => {
   callback(filterCities(inputValue))
 }
 
-const CitySelect = ({ fetchWeather }) => {
+const CitySelect = ({ setCity }) => {
+  const handleChange = ({ coords, label }) => {
+    setCity({ coords, label })
+  }
+
   return (
     <AsyncSelect
       className="CitySelect"
       value=""
       placeholder=""
       loadOptions={loadOptions}
-      onChange={fetchWeather}
+      onChange={handleChange}
       styles={selectStyles}
       components={{
         Option,
