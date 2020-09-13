@@ -68,6 +68,8 @@ interface Props {
 const WeatherContent: React.FC<Props> = ({ status, data, city }) => {
   const renderWeatherContent = () => {
     if (status === 'error' || data?.message) {
+      console.error('WeatherContent @ renderWeatherContent >>>>>', data)
+
       return <p className="message">Ocorreu um erro</p>
     }
 
