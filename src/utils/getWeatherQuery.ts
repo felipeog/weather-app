@@ -1,4 +1,4 @@
-type Coords = {
+interface Coords {
   lon: number
   lat: number
 }

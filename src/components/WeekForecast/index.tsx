@@ -2,7 +2,7 @@ import React from 'react'
 import weekDays from '../../consts/weekDays'
 import './index.scss'
 
-type Props = {
+interface Props {
   weekForecast: {
     clouds: number
     dew_point: number

@@ -7,7 +7,7 @@ import selectStyles from './selectStyles'
 import normalizeString from '../../utils/normalizeString'
 import cityOptions from '../../consts/cityOptions'
 
-type CityOption = {
+interface CityOption {
   label: string
   value: number
   subLabel: string
@@ -17,7 +17,7 @@ type CityOption = {
   }
 }
 
-type Props = {
+interface Props {
   setCity: Dispatch<SetStateAction<CityOption | undefined>>
 }
 

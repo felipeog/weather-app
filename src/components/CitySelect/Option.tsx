@@ -1,7 +1,7 @@
 import React from 'react'
 import { components, OptionProps } from 'react-select'
 
-type CityOption = {
+interface CityOption {
   label: string
   value: number
   subLabel: string

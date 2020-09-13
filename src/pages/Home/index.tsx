@@ -5,12 +5,12 @@ import WeatherContent from '../../components/WeatherContent'
 import getWeatherQuery from '../../utils/getWeatherQuery'
 import './index.scss'
 
-type Coords = {
+interface Coords {
   lon: number
   lat: number
 }
 
-type CityOption = {
+interface CityOption {
   label: string
   value: number
   subLabel: string

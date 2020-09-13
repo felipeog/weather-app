@@ -1,7 +1,7 @@
 import cities from './cities.json'
 import states from './states.json'
 
-type CityOption = {
+interface CityOption {
   label: string
   value: number
   subLabel: string

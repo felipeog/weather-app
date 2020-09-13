@@ -3,7 +3,7 @@ import CurrentDayWeather from '../CurrentDayWeather'
 import WeekForecast from '../WeekForecast'
 import './index.scss'
 
-type CityOption = {
+interface CityOption {
   label: string
   value: number
   subLabel: string
@@ -13,7 +13,7 @@ type CityOption = {
   }
 }
 
-type Props = {
+interface Props {
   status: string
   data: {
     daily: {

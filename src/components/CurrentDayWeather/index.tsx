@@ -3,7 +3,7 @@ import months from '../../consts/months'
 import weekDays from '../../consts/weekDays'
 import './index.scss'
 
-type Props = {
+interface Props {
   currentDay: {
     clouds: number
     dew_point: number
