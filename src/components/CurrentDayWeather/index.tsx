@@ -3,7 +3,45 @@ import months from '../../consts/months'
 import weekDays from '../../consts/weekDays'
 import './index.scss'
 
-const CurrentDayWeather = ({ currentDay, cityName }) => {
+type Props = {
+  currentDay: {
+    clouds: number
+    dew_point: number
+    dt: number
+    feels_like: {
+      day: number
+      eve: number
+      morn: number
+      night: number
+    }
+    humidity: number
+    pop: number
+    pressure: number
+    sunrise: number
+    sunset: number
+    temp: {
+      day: number
+      eve: number
+      max: number
+      min: number
+      morn: number
+      night: number
+    }
+    uvi: number
+    weather: {
+      description: string
+      icon: string
+      id: number
+      main: string
+    }[]
+    length: number
+    wind_deg: number
+    wind_speed: number
+  }
+  cityName: string
+}
+
+const CurrentDayWeather = ({ currentDay, cityName }: Props) => {
   const date = new Date(currentDay.dt * 1000)
   const weekDay = weekDays[date.getDay()]
   const day = date.getDate()
