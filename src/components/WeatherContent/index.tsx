@@ -13,50 +13,55 @@ interface CityOption {
   }
 }
 
+interface Data {
+  daily: {
+    clouds: number
+    dew_point: number
+    dt: number
+    feels_like: {
+      day: number
+      eve: number
+      morn: number
+      night: number
+    }
+    humidity: number
+    pop: number
+    pressure: number
+    sunrise: number
+    sunset: number
+    temp: {
+      day: number
+      eve: number
+      max: number
+      min: number
+      morn: number
+      night: number
+    }
+    uvi: number
+    weather: {
+      description: string
+      icon: string
+      id: number
+      main: string
+    }[]
+    length: number
+    wind_deg: number
+    wind_speed: number
+  }[]
+  lat: number
+  lon: number
+  timezone: string
+  timezone_offset: number
+}
+
+interface ErrorHandling {
+  cod: number
+  message: string
+}
+
 interface Props {
   status: string
-  data: {
-    daily: {
-      clouds: number
-      dew_point: number
-      dt: number
-      feels_like: {
-        day: number
-        eve: number
-        morn: number
-        night: number
-      }
-      humidity: number
-      pop: number
-      pressure: number
-      sunrise: number
-      sunset: number
-      temp: {
-        day: number
-        eve: number
-        max: number
-        min: number
-        morn: number
-        night: number
-      }
-      uvi: number
-      weather: {
-        description: string
-        icon: string
-        id: number
-        main: string
-      }[]
-      length: number
-      wind_deg: number
-      wind_speed: number
-    }[]
-    lat: number
-    lon: number
-    timezone: string
-    timezone_offset: number
-    cod: number
-    message: string
-  }
+  data: Data & ErrorHandling
   city: CityOption | undefined
 }
 
