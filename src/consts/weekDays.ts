@@ -1,4 +1,4 @@
-export default [
+const weekDays = [
   'Domingo',
   'Segunda',
   'Terça',
@@ -7,3 +7,5 @@ export default [
   'Sexta',
   'Sábado',
 ]
+
+export default weekDays
