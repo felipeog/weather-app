@@ -1,7 +1,17 @@
 import React from 'react'
-import { components } from 'react-select'
+import { components, OptionProps } from 'react-select'
 
-const Option = props => {
+type CityOption = {
+  label: string
+  value: number
+  subLabel: string
+  coords: {
+    lon: number
+    lat: number
+  }
+}
+
+const Option = (props: OptionProps<CityOption>) => {
   const { label, subLabel } = props.data
 
   return (

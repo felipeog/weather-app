@@ -1,5 +1,5 @@
-export default {
-  control: provided => ({
+const selectStyles = {
+  control: (provided: object) => ({
     ...provided,
     background: 'transparent',
     border: 'none',
@@ -10,22 +10,25 @@ export default {
       borderBottom: '.1rem solid #d6d6d6',
     },
   }),
-  input: provided => ({
+  input: (provided: object) => ({
     ...provided,
     color: '#d6d6d6',
     input: {
       font: 'inherit',
     },
   }),
-  menu: provided => ({
+  menu: (provided: object) => ({
     ...provided,
     background: '#060606',
   }),
-  noOptionsMessage: provided => ({
+  noOptionsMessage: (provided: object) => ({
     ...provided,
     background: '#161616',
   }),
-  option: (provided, state) => ({
+  option: (
+    provided: object,
+    state: { isSelected: object; isFocused: object },
+  ) => ({
     ...provided,
     '&:hover': { background: '#363636' },
     background: (state.isSelected ? '#262626' : state.isFocused)
@@ -37,7 +40,7 @@ export default {
       color: '#969696',
     },
   }),
-  indicatorsContainer: provided => ({
+  indicatorsContainer: (provided: object) => ({
     ...provided,
     width: '1.2rem',
     svg: {
@@ -46,3 +49,5 @@ export default {
     },
   }),
 }
+
+export default selectStyles
