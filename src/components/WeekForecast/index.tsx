@@ -39,7 +39,7 @@ type Props = {
   }[]
 }
 
-const WeekForecast = ({ weekForecast }: Props) => {
+const WeekForecast: React.FC<Props> = ({ weekForecast }) => {
   return (
     <table className="WeekForecast">
       <thead>

@@ -11,7 +11,9 @@ type CityOption = {
   }
 }
 
-const Option = (props: OptionProps<CityOption>) => {
+type Props = OptionProps<CityOption>
+
+const Option: React.FC<Props> = props => {
   const { label, subLabel } = props.data
 
   return (

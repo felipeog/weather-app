@@ -41,7 +41,7 @@ type Props = {
   cityName: string | undefined
 }
 
-const CurrentDayWeather = ({ currentDay, cityName }: Props) => {
+const CurrentDayWeather: React.FC<Props> = ({ currentDay, cityName }) => {
   const date = new Date(currentDay.dt * 1000)
   const weekDay = weekDays[date.getDay()]
   const day = date.getDate()

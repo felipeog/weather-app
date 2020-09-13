@@ -77,7 +77,7 @@ const loadOptions = (
   callback(filteredOption)
 }
 
-const CitySelect = ({ setCity }: Props) => {
+const CitySelect: React.FC<Props> = ({ setCity }) => {
   const handleChange = (value: ValueType<CityOption>) => {
     setCity(value as CityOption)
   }
