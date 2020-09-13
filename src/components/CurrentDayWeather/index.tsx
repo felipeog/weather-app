@@ -38,7 +38,7 @@ type Props = {
     wind_deg: number
     wind_speed: number
   }
-  cityName: string
+  cityName: string | undefined
 }
 
 const CurrentDayWeather = ({ currentDay, cityName }: Props) => {

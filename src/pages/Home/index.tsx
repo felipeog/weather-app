@@ -5,35 +5,43 @@ import WeekForecast from '../../components/WeekForecast'
 import { useQuery } from 'react-query'
 import './index.scss'
 
-const cityInitialState = {
-  coords: null,
-  label: '',
+type Coords = {
+  lon: number
+  lat: number
 }
 
-const getQuery = ({ lon, lat }) => {
+type CityOption = {
+  label: string
+  value: number
+  subLabel: string
+  coords: Coords
+}
+
+const getQuery = ({ lon, lat }: Coords) => {
   const params = new URLSearchParams({
-    lat,
-    lon,
+    lat: lat.toString(),
+    lon: lon.toString(),
     exclude: 'current,minutely,hourly',
     units: 'metric',
     lang: 'pt_br',
-    appid: process.env.REACT_APP_APPID,
+    appid: process.env.REACT_APP_APPID || '',
   })
 
   return `https://api.openweathermap.org/data/2.5/onecall?${params}`
 }
 
-const fetchWeather = async (_, coords) => {
+const fetchWeather = async (key: string, coords: Coords) => {
   if (!coords) return null
 
   const { lon, lat } = coords
   const res = await fetch(getQuery({ lon, lat }))
+
   return res.json()
 }
 
 const Home = () => {
-  const [city, setCity] = useState(cityInitialState)
-  const { data, status } = useQuery(['weather', city.coords], fetchWeather, {
+  const [city, setCity] = useState<CityOption | undefined>()
+  const { data, status } = useQuery(['weather', city?.coords], fetchWeather, {
     cacheTime: 60 * 60 * 1000,
   })
 
@@ -50,12 +58,12 @@ const Home = () => {
       const { daily } = data
       const currentDay = daily[0]
       const weekForecast = daily.slice(1)
-      const cityName = city.label
+      const cityName = city?.label
 
       return (
         <>
-          <CurrentDayWeather {...{ currentDay, cityName }} />
-          <WeekForecast {...{ weekForecast }} />
+          <CurrentDayWeather currentDay={currentDay} cityName={cityName} />
+          <WeekForecast weekForecast={weekForecast} />
         </>
       )
     }
@@ -66,7 +74,7 @@ const Home = () => {
   return (
     <div className="Home">
       <div className="container">
-        <CitySelect {...{ setCity }} />
+        <CitySelect setCity={setCity} />
 
         {renderWeatherContent()}
       </div>

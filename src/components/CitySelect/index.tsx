@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Dispatch, SetStateAction } from 'react'
 import { ValueType, OptionsType } from 'react-select'
 import AsyncSelect from 'react-select/async'
 import Option from './Option'
@@ -18,7 +18,7 @@ type CityOption = {
 }
 
 type Props = {
-  setCity: (city: ValueType<CityOption>) => void
+  setCity: Dispatch<SetStateAction<CityOption | undefined>>
 }
 
 const getStateNameByUfCode = (ufCode: number) => {
@@ -78,13 +78,17 @@ const loadOptions = (
 }
 
 const CitySelect = ({ setCity }: Props) => {
+  const handleChange = (value: ValueType<CityOption>) => {
+    setCity(value as CityOption)
+  }
+
   return (
     <AsyncSelect
       className="CitySelect"
       value={null}
       placeholder=""
       loadOptions={loadOptions}
-      onChange={setCity}
+      onChange={handleChange}
       styles={selectStyles}
       components={{
         Option,
