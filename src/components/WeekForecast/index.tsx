@@ -2,7 +2,44 @@ import React from 'react'
 import weekDays from '../../consts/weekDays'
 import './index.scss'
 
-const WeekForecast = ({ weekForecast }) => {
+type Props = {
+  weekForecast: {
+    clouds: number
+    dew_point: number
+    dt: number
+    feels_like: {
+      day: number
+      eve: number
+      morn: number
+      night: number
+    }
+    humidity: number
+    pop: number
+    pressure: number
+    sunrise: number
+    sunset: number
+    temp: {
+      day: number
+      eve: number
+      max: number
+      min: number
+      morn: number
+      night: number
+    }
+    uvi: number
+    weather: {
+      description: string
+      icon: string
+      id: number
+      main: string
+    }[]
+    length: number
+    wind_deg: number
+    wind_speed: number
+  }[]
+}
+
+const WeekForecast = ({ weekForecast }: Props) => {
   return (
     <table className="WeekForecast">
       <thead>
