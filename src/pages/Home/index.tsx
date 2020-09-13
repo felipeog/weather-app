@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useQuery } from 'react-query'
 import CitySelect from '../../components/CitySelect'
 import WeatherContent from '../../components/WeatherContent'
+import getWeatherQuery from '../../utils/getWeatherQuery'
 import './index.scss'
 
 type Coords = {
@@ -16,24 +17,11 @@ type CityOption = {
   coords: Coords
 }
 
-const getQuery = ({ lon, lat }: Coords) => {
-  const params = new URLSearchParams({
-    lat: lat.toString(),
-    lon: lon.toString(),
-    exclude: 'current,minutely,hourly',
-    units: 'metric',
-    lang: 'pt_br',
-    appid: process.env.REACT_APP_APPID || '',
-  })
-
-  return `https://api.openweathermap.org/data/2.5/onecall?${params}`
-}
-
 const fetchWeather = async (key: string, coords: Coords) => {
   if (!coords) return null
 
   const { lon, lat } = coords
-  const res = await fetch(getQuery({ lon, lat }))
+  const res = await fetch(getWeatherQuery({ lon, lat }))
 
   return res.json()
 }
