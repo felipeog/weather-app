@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
-import CitySelect from '../../components/CitySelect'
-import CurrentDayWeather from '../../components/CurrentDayWeather'
-import WeekForecast from '../../components/WeekForecast'
 import { useQuery } from 'react-query'
+import CitySelect from '../../components/CitySelect'
+import WeatherContent from '../../components/WeatherContent'
 import './index.scss'
 
 type Coords = {
@@ -45,38 +44,11 @@ const Home = () => {
     cacheTime: 60 * 60 * 1000,
   })
 
-  const renderWeatherContent = () => {
-    if (status === 'error' || data?.message) {
-      return <p className="message">Ocorreu um erro</p>
-    }
-
-    if (status === 'loading') {
-      return <p className="message">Carregando...</p>
-    }
-
-    if (status === 'success' && data?.daily) {
-      const { daily } = data
-      const currentDay = daily[0]
-      const weekForecast = daily.slice(1)
-      const cityName = city?.label
-
-      return (
-        <>
-          <CurrentDayWeather currentDay={currentDay} cityName={cityName} />
-          <WeekForecast weekForecast={weekForecast} />
-        </>
-      )
-    }
-
-    return <p className="message">Comece pesquisando a cidade</p>
-  }
-
   return (
     <div className="Home">
       <div className="container">
         <CitySelect setCity={setCity} />
-
-        {renderWeatherContent()}
+        <WeatherContent status={status} data={data} city={city} />
       </div>
     </div>
   )
